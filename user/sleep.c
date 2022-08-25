@@ -15,4 +15,17 @@
 // 5.Add your sleep program to UPROGS in Makefile; once you've done that,
 //   make qemu will compile your program, and you'll be able to run it from the xv6 shell.
 //
+#include "kernel/types.h"
+#include "kernel/stat.h"
+#include "user/user.h"
 
+int main(int argc, char *argv[]) {
+
+    if (argc < 2) {
+        fprintf(2, "Usage: sleep <seconds>\n");
+        exit(1);
+    }
+    int time = atoi(argv[1]);
+    
+    exit(0);
+}
